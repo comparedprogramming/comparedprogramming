@@ -1,24 +1,17 @@
-# Hello World in C
+# Hello World in Javascript
 
-## Compiling instructions for Debian based distributions
+## Interpreting instructions for Debian based distributions
 
-Install [GCC](https://gcc.gnu.org)(GNU Compiler Collection):
+Install [NodeJS](https://nodejs.org):
 
 ```bash
 $ sudo apt update
-$ sudo apt install build-essential
+$ sudo apt install nodejs
 ```
-
-Compile the source code:
+Run from source code:
 
 ```bash
-gcc helloworld.c -o helloworld
-```
-
-Run the binary:
-
-```bash
-./helloworld
+nodejs helloworld.js
 ```
 
 ## Running from a Docker container
@@ -27,12 +20,12 @@ Run the binary:
 
 1. Installl [Docker](https://www.docker.com)
 2. Run `sudo docker build .`
-3. Create a tag using `sudo docker image tag [IMAGE ID] c:helloworld`
+3. Create a tag using `sudo docker image tag [IMAGE ID] javascript:helloworld`
 
 > Where do I get the IMAGE ID? At the bottom of `sudo docker build` output you can see the IMAGE ID. if you have lost this output, use `sudo docker image ls` to list the images.
 
-4. Create a container: `sudo docker container create c:helloworld`
-5. Run container with `sudo docker run c:helloworld &`
+4. Create a container: `sudo docker container create javascript:helloworld`
+5. Run container with `sudo docker run javascript:helloworld &`
 6. To access the container console: `sudo docker exec -it [CONTAINER ID] /bin/bash`. You can identify the container Você pode identificar o container pela coluna IMAGE.
 7. To stop the container: `sudo docker container stop [CONTAINER ID]`
 
@@ -58,6 +51,6 @@ sudo docker image rm [IMAGE ID]
 
 **Complete time to run container since Debian image creation**
 
-6m8,800s
+2m9,902s
 
 [Go back](../README.md)

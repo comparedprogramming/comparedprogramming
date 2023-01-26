@@ -1,38 +1,45 @@
-# Hello World in C
+# Hello World in PHP
 
-## Compiling instructions for Debian based distributions
+## Interpreting instructions for Debian based distributions
 
-Install [GCC](https://gcc.gnu.org)(GNU Compiler Collection):
+Install [PHP](https://www.php.net)(PHP Hypertext Preprocessor):
 
 ```bash
 $ sudo apt update
-$ sudo apt install build-essential
+$ sudo apt install php-dev
 ```
 
-Compile the source code:
+If installed version is 7, remove it and install 8 following these instructions:
 
 ```bash
-gcc helloworld.c -o helloworld
+$ sudo apt update
+$ sudo apt -y upgrade
+$ sudo apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
+$ sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list
+$ sudo apt install -y wget
+$ sudo wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
+$ sudo apt update 
+$ sudo apt install -y php8.0
 ```
 
-Run the binary:
+Run from source code:
 
 ```bash
-./helloworld
+php helloworld.php
 ```
 
-## Running from a Docker container
+## Running from a Docker container (PHP 8)
 
 ### Steps to run:
 
 1. Installl [Docker](https://www.docker.com)
 2. Run `sudo docker build .`
-3. Create a tag using `sudo docker image tag [IMAGE ID] c:helloworld`
+3. Create a tag using `sudo docker image tag [IMAGE ID] php:helloworld`
 
 > Where do I get the IMAGE ID? At the bottom of `sudo docker build` output you can see the IMAGE ID. if you have lost this output, use `sudo docker image ls` to list the images.
 
-4. Create a container: `sudo docker container create c:helloworld`
-5. Run container with `sudo docker run c:helloworld &`
+4. Create a container: `sudo docker container create php:helloworld`
+5. Run container with `sudo docker run php:helloworld &`
 6. To access the container console: `sudo docker exec -it [CONTAINER ID] /bin/bash`. You can identify the container Você pode identificar o container pela coluna IMAGE.
 7. To stop the container: `sudo docker container stop [CONTAINER ID]`
 
@@ -58,6 +65,6 @@ sudo docker image rm [IMAGE ID]
 
 **Complete time to run container since Debian image creation**
 
-6m8,800s
+12m22,873s
 
 [Go back](../README.md)

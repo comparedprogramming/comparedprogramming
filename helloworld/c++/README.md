@@ -1,4 +1,4 @@
-# Hello World in C
+# Hello World in C++
 
 ## Compiling instructions for Debian based distributions
 
@@ -12,7 +12,7 @@ $ sudo apt install build-essential
 Compile the source code:
 
 ```bash
-gcc helloworld.c -o helloworld
+g++ helloworld.c -o helloworld
 ```
 
 Run the binary:
@@ -31,8 +31,8 @@ Run the binary:
 
 > Where do I get the IMAGE ID? At the bottom of `sudo docker build` output you can see the IMAGE ID. if you have lost this output, use `sudo docker image ls` to list the images.
 
-4. Create a container: `sudo docker container create c:helloworld`
-5. Run container with `sudo docker run c:helloworld &`
+4. Create a container: `sudo docker container create cplusplus:helloworld`
+5. Run container with `sudo docker run cplusplus:helloworld &`
 6. To access the container console: `sudo docker exec -it [CONTAINER ID] /bin/bash`. You can identify the container Você pode identificar o container pela coluna IMAGE.
 7. To stop the container: `sudo docker container stop [CONTAINER ID]`
 
@@ -58,6 +58,6 @@ sudo docker image rm [IMAGE ID]
 
 **Complete time to run container since Debian image creation**
 
-6m8,800s
+5m48,916s
 
 [Go back](../README.md)
