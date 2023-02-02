@@ -19,7 +19,7 @@ $ sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /
 $ sudo apt install -y wget
 $ sudo wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
 $ sudo apt update 
-$ sudo apt install -y php8.0
+$ sudo apt install -y php8.1
 ```
 
 Run from source code:

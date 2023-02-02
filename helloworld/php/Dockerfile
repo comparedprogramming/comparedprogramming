@@ -8,7 +8,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc
 RUN apt install -y wget
 RUN wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
 RUN apt update 
-RUN apt install -y php8.0
+RUN apt install -y php8.1
 
 COPY helloworld.php .
 
