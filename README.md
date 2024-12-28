@@ -7,3 +7,4 @@ Algorithms implemented in several languages
 Exemplos em Português:
 
 * [Calculadora](calculadora)
+* [Jogo da forca](jogodaforca)
